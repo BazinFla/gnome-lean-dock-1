@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="gld-1@bazinfla.github.com">
+  <enum id="org.gnome.shell.extensions.gld-1.position">
+    <value value="0" nick="TOP"/>
+    <value value="1" nick="RIGHT"/>
+    <value value="2" nick="BOTTOM"/>
+    <value value="3" nick="LEFT"/>
+  </enum>
+
+  <schema path="/org/gnome/shell/extensions/gld-1/" id="org.gnome.shell.extensions.gld-1">
+    <key name="dock-position" enum="org.gnome.shell.extensions.gld-1.position">
+      <default>'BOTTOM'</default>
+      <summary>Dock position</summary>
+      <description>Dock position on screen: TOP, RIGHT, BOTTOM or LEFT.</description>
+    </key>
+
+
+    <key type="b" name="extend-height">
+      <default>false</default>
+      <summary>Extend height</summary>
+      <description>Extend dock to full screen width or height (panel mode).</description>
+    </key>
+
+    <key type="i" name="dock-margin">
+      <default>6</default>
+      <range min="0" max="48"/>
+      <summary>Dock screen margin</summary>
+      <description>Margin in pixels between the dock and screen edges when not in panel mode.</description>
+    </key>
+
+    <key type="i" name="dash-max-icon-size">
+      <default>48</default>
+      <range min="16" max="128"/>
+      <summary>Max icon size</summary>
+      <description>Maximum size in pixels for application icons.</description>
+    </key>
+
+    <key type="i" name="icon-padding">
+      <default>0</default>
+      <range min="0" max="24"/>
+      <summary>Icon container padding</summary>
+      <description>Padding in pixels inside each icon container button (0 to 24px).</description>
+    </key>
+
+    <key type="i" name="preferred-monitor">
+      <default>-1</default>
+      <summary>Preferred monitor</summary>
+      <description>-1 for primary monitor, 0 or greater for specific monitor index.</description>
+    </key>
+
+    <key type="b" name="multi-monitor">
+      <default>false</default>
+      <summary>Show on all monitors</summary>
+      <description>Show dock on all connected displays.</description>
+    </key>
+
+    <key type="b" name="isolate-monitors">
+      <default>false</default>
+      <summary>Isolate monitors</summary>
+      <description>Show only applications present on the current monitor.</description>
+    </key>
+
+    <key type="b" name="isolate-workspaces">
+      <default>false</default>
+      <summary>Isolate workspaces</summary>
+      <description>Show only applications present on the current workspace.</description>
+    </key>
+
+    <key type="s" name="click-action">
+      <default>'CYCLE'</default>
+      <summary>Click action</summary>
+      <description>Action on clicking an app icon with running windows (CYCLE, MINIMIZE, FOCUS, PREVIEWS).</description>
+    </key>
+
+    <key type="s" name="middle-click-action">
+      <default>'CLOSE_ALL'</default>
+      <summary>Middle-click action</summary>
+      <description>Action on middle-clicking an app icon with running windows (CLOSE_ALL, NEW_WINDOW, MINIMIZE, TOGGLE_FULLSCREEN, NONE).</description>
+    </key>
+
+    <key type="b" name="shift-click-discrete-gpu">
+      <default>true</default>
+      <summary>Shift-click launch on discrete GPU</summary>
+      <description>Launch application on discrete / dedicated GPU when Shift-clicking the icon.</description>
+    </key>
+
+    <key type="s" name="scroll-action">
+      <default>'CYCLE'</default>
+      <summary>Scroll action</summary>
+      <description>Action when scrolling over the dock (NONE, CYCLE, SWITCH-WORKSPACE).</description>
+    </key>
+
+    <key type="d" name="scroll-speed">
+      <default>1.0</default>
+      <range min="0.2" max="3.0"/>
+      <summary>Scroll speed</summary>
+      <description>Multiplier for mouse wheel scrolling speed across dock icons (0.2 to 3.0).</description>
+    </key>
+
+    <key type="b" name="show-apps-at-top">
+      <default>false</default>
+      <summary>Show apps button at beginning</summary>
+      <description>Place the Show Applications button at the start instead of the end.</description>
+    </key>
+
+    <key type="b" name="show-app-names">
+      <default>false</default>
+      <summary>Show application names on hover</summary>
+      <description>Show application name tooltips when hovering over dock icons.</description>
+    </key>
+
+    <key type="b" name="show-show-apps-button">
+      <default>true</default>
+      <summary>Show application grid button</summary>
+      <description>Show or hide the Show Applications button.</description>
+    </key>
+
+    <key type="d" name="animation-time">
+      <default>0.2</default>
+      <summary>Animation time</summary>
+      <description>Duration of slide animations in seconds.</description>
+    </key>
+
+    <key type="d" name="hide-delay">
+      <default>0.25</default>
+      <summary>Hide delay</summary>
+      <description>Delay in seconds before hiding the dock.</description>
+    </key>
+
+    <key type="d" name="show-delay">
+      <default>0.15</default>
+      <summary>Show delay</summary>
+      <description>Delay in seconds before showing the dock on hover.</description>
+    </key>
+
+    <key type="d" name="background-opacity">
+      <default>0.85</default>
+      <range min="0.0" max="1.0"/>
+      <summary>Background opacity</summary>
+      <description>Dock background opacity between 0.0 and 1.0.</description>
+    </key>
+
+    <key type="b" name="keep-pinned-apps-in-grid">
+      <default>true</default>
+      <summary>Keep pinned apps in AppGrid</summary>
+      <description>Display pinned and favorite applications in the application grid and inside folders.</description>
+    </key>
+
+    <key type="b" name="enable-spring-load">
+      <default>true</default>
+      <summary>Enable spring-loaded applications</summary>
+      <description>Activate and bring applications to the foreground when hovering over their dock icon with a dragged item.</description>
+    </key>
+
+    <key type="i" name="spring-load-delay">
+      <default>500</default>
+      <range min="200" max="1500"/>
+      <summary>Spring load delay</summary>
+      <description>Delay in milliseconds before bringing the application to the foreground on drag hover (200 to 1500 ms).</description>
+    </key>
+
+    <key type="b" name="show-notification-badge">
+      <default>false</default>
+      <summary>Show notification badges (dormant)</summary>
+      <description>Dormant key for backward compatibility.</description>
+    </key>
+
+    <key type="s" name="notification-badge-style">
+      <default>'COUNT'</default>
+      <summary>Notification badge style (dormant)</summary>
+      <description>Dormant key for backward compatibility.</description>
+    </key>
+
+    <key type="s" name="running-indicator-style">
+      <default>'DOTS'</default>
+      <summary>Running indicator style</summary>
+      <description>Style for running app indicators: DOTS (multi-window dots), LINE (continuous pill), DASH (compact dash), GLOW (ambient glow).</description>
+    </key>
+
+    <key type="s" name="running-indicator-color">
+      <default>'SYSTEM'</default>
+      <summary>Running indicator color theme</summary>
+      <description>Color scheme for indicators: SYSTEM (sync with GNOME accent color), BLUE, TEAL, GREEN, YELLOW, ORANGE, RED, PINK, PURPLE, SLATE, WHITE.</description>
+    </key>
+
+    <key type="s" name="window-preview-style">
+      <default>'THUMBNAIL'</default>
+      <summary>Window preview style</summary>
+      <description>Preview menu appearance: THUMBNAIL (live visual window clones) or LIST (classic text list).</description>
+    </key>
+
+    <key type="i" name="window-preview-size">
+      <default>220</default>
+      <range min="140" max="360"/>
+      <summary>Window preview thumbnail width</summary>
+      <description>Width in pixels of window preview thumbnails (140px to 360px).</description>
+    </key>
+  </schema>
+</schemalist>
