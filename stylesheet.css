@@ -1,0 +1,586 @@
+/* Gnome Lean Dock 1 (GLD-1) Stylesheet */
+
+#gld1Container,
+#dashtodockContainer {
+    padding: 0;
+    margin: 0;
+}
+
+#gld1EdgeTrigger,
+#dashtodockEdgeTrigger {
+    background-color: transparent;
+    border: none;
+}
+
+#gld1Container #dash,
+#dashtodockContainer #dash {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+/* Reset GNOME Shell default internal dash background and sizing */
+#gld1Container #dash .dash-background,
+#dashtodockContainer #dash .dash-background,
+#dash .dash-background,
+.gld1-dash .dash-background,
+.dash2dock-dash .dash-background {
+    background-color: transparent;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Dock Container Styling */
+#gld1Container #dash.gld1-dash,
+#gld1Container #dash.dash2dock-dash,
+#dashtodockContainer #dash.dash2dock-dash,
+#dash.gld1-dash,
+#dash.dash2dock-dash,
+.gld1-dash,
+.dash2dock-dash {
+    background-color: rgba(24, 24, 24, 0.85);
+    border-radius: 20px;
+    padding: 6px 10px;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#gld1Container #dash.gld1-dash.vertical,
+#dashtodockContainer #dash.dash2dock-dash.vertical,
+#dash.gld1-dash.vertical,
+#dash.dash2dock-dash.vertical,
+.gld1-dash.vertical,
+.dash2dock-dash.vertical {
+    padding: 10px 6px;
+    margin: 0;
+}
+
+/* ScrollView Styling */
+#gld1Container .gld1-scrollview,
+#dashtodockContainer .dash2dock-scrollview,
+#dash .gld1-scrollview,
+#dash .dash2dock-scrollview,
+.gld1-dash .gld1-scrollview,
+.dash2dock-dash .dash2dock-scrollview,
+.gld1-scrollview,
+.dash2dock-scrollview {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    background-color: transparent;
+}
+
+/* Reset dock item containers */
+#gld1Container .dash-item-container,
+#dashtodockContainer .dash-item-container,
+#dash .dash-item-container,
+.gld1-dash .dash-item-container,
+.dash2dock-dash .dash-item-container,
+.dash-item-container {
+    padding: 0;
+    margin: 0;
+}
+
+.dash-item-container {
+    padding: 5px;
+    margin: 5px 0px;
+}
+
+/* Base style for all dock items (App icons, Show Apps button, etc.) - override GNOME Shell defaults */
+#dash .dash-item-container .show-apps,
+#dash .dash-item-container .overview-tile,
+#dash .dash-item-container .grid-search-result,
+#dash .dash-item-container .app-well-app,
+#dash .dash-item-container StButton,
+#gld1Container .dash-item-container .show-apps,
+#gld1Container .dash-item-container .show-apps-icon,
+#gld1Container .dash-item-container .overview-tile,
+#gld1Container .dash-item-container .app-well-app,
+#gld1Container .dash-item-container StButton,
+#dashtodockContainer .dash-item-container .show-apps,
+#dashtodockContainer .dash-item-container .show-apps-icon,
+#dashtodockContainer .dash-item-container .overview-tile,
+#dashtodockContainer .dash-item-container .app-well-app,
+#dashtodockContainer .dash-item-container StButton,
+.gld1-dash .show-apps,
+.gld1-dash .show-apps-icon,
+.gld1-dash .app-well-app,
+.gld1-dash .overview-tile,
+.dash2dock-dash .show-apps,
+.dash2dock-dash .show-apps-icon,
+.dash2dock-dash .app-well-app,
+.dash2dock-dash .overview-tile,
+.dash-item-container .app-well-app,
+.dash-item-container .show-apps,
+.dash-item-container .show-apps-icon,
+.dash-item-container .overview-tile,
+.dash-item-container StButton {
+    padding: 0px 0px;
+    margin: 0 0px;
+    border-radius: 12px;
+    background: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    transition-duration: 150ms;
+}
+
+.gld1-dash.vertical .dash-item-container .show-apps,
+.gld1-dash.vertical .dash-item-container .overview-tile,
+.gld1-dash.vertical .dash-item-container .grid-search-result,
+.gld1-dash.vertical .dash-item-container .app-well-app,
+.gld1-dash.vertical .dash-item-container StButton,
+.dash2dock-dash.vertical .dash-item-container .show-apps,
+.dash2dock-dash.vertical .dash-item-container .overview-tile,
+.dash2dock-dash.vertical .dash-item-container .grid-search-result,
+.dash2dock-dash.vertical .dash-item-container .app-well-app,
+.dash2dock-dash.vertical .dash-item-container StButton {
+    padding: 0px 0px;
+    margin: 0px 0;
+}
+
+/* Reset inner icon backgrounds and padding so icons are perfectly centered */
+#dash .dash-item-container .show-apps .overview-icon,
+#dash .dash-item-container .show-apps-icon .overview-icon,
+#dash .dash-item-container .overview-tile .overview-icon,
+#dash .dash-item-container .grid-search-result .overview-icon,
+#gld1Container .dash-item-container .show-apps .overview-icon,
+#gld1Container .dash-item-container .show-apps-icon .overview-icon,
+#gld1Container .dash-item-container .overview-tile .overview-icon,
+#gld1Container .overview-icon,
+#dashtodockContainer .dash-item-container .show-apps .overview-icon,
+#dashtodockContainer .dash-item-container .show-apps-icon .overview-icon,
+#dashtodockContainer .dash-item-container .overview-tile .overview-icon,
+#dashtodockContainer .overview-icon,
+.gld1-dash .show-apps .overview-icon,
+.gld1-dash .show-apps-icon .overview-icon,
+.dash2dock-dash .show-apps .overview-icon,
+.dash2dock-dash .show-apps-icon .overview-icon,
+.dash-item-container .show-apps .overview-icon,
+.dash-item-container .show-apps-icon .overview-icon,
+.dash-item-container .overview-tile .overview-icon,
+.dash-item-container .grid-search-result .overview-icon {
+    padding: 0;
+    margin: 0;
+    spacing: 0;
+    border-radius: 0;
+    background-color: transparent;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Separator styling */
+#dash .dash-separator,
+#gld1Container .dash-separator,
+#dashtodockContainer .dash-separator,
+.gld1-dash .dash-separator,
+.dash2dock-dash .dash-separator {
+    margin: 4px 4px;
+    padding: 0;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.gld1-dash.vertical .dash-separator,
+.dash2dock-dash.vertical .dash-separator {
+    margin: 4px 4px;
+    height: 1px;
+    width: auto;
+}
+
+/* Hover highlight on all dock icons & buttons */
+#gld1Container .dash-item-container .show-apps:hover,
+#gld1Container .dash-item-container .show-apps-icon:hover,
+#gld1Container .dash-item-container .overview-tile:hover,
+#gld1Container .dash-item-container .app-well-app:hover,
+#gld1Container .dash-item-container StButton:hover,
+#dashtodockContainer .dash-item-container .show-apps:hover,
+#dashtodockContainer .dash-item-container .show-apps-icon:hover,
+#dashtodockContainer .dash-item-container .overview-tile:hover,
+#dashtodockContainer .dash-item-container .app-well-app:hover,
+#dashtodockContainer .dash-item-container StButton:hover,
+#dash .dash-item-container .show-apps:hover,
+#dash .dash-item-container .show-apps-icon:hover,
+#dash .dash-item-container .overview-tile:hover,
+#dash .dash-item-container .app-well-app:hover,
+#dash .dash-item-container StButton:hover,
+.gld1-dash .show-apps:hover,
+.gld1-dash .show-apps-icon:hover,
+.gld1-dash .app-well-app:hover,
+.gld1-dash .overview-tile:hover,
+.dash2dock-dash .show-apps:hover,
+.dash2dock-dash .show-apps-icon:hover,
+.dash2dock-dash .app-well-app:hover,
+.dash2dock-dash .overview-tile:hover,
+.dash-item-container .app-well-app:hover,
+.dash-item-container .show-apps:hover,
+.dash-item-container .show-apps-icon:hover,
+.dash-item-container .overview-tile:hover,
+.dash-item-container StButton:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Active / Checked state on all dock icons & buttons */
+#gld1Container .dash-item-container .show-apps:active,
+#gld1Container .dash-item-container .show-apps:checked,
+#gld1Container .dash-item-container .show-apps-icon:active,
+#gld1Container .dash-item-container .show-apps-icon:checked,
+#gld1Container .dash-item-container .app-well-app:active,
+#gld1Container .dash-item-container .app-well-app:checked,
+#gld1Container .dash-item-container .overview-tile:active,
+#gld1Container .dash-item-container .overview-tile:checked,
+#gld1Container .dash-item-container StButton:active,
+#gld1Container .dash-item-container StButton:checked,
+#dashtodockContainer .dash-item-container .show-apps:active,
+#dashtodockContainer .dash-item-container .show-apps:checked,
+#dashtodockContainer .dash-item-container .show-apps-icon:active,
+#dashtodockContainer .dash-item-container .show-apps-icon:checked,
+#dashtodockContainer .dash-item-container .app-well-app:active,
+#dashtodockContainer .dash-item-container .app-well-app:checked,
+#dashtodockContainer .dash-item-container .overview-tile:active,
+#dashtodockContainer .dash-item-container .overview-tile:checked,
+#dashtodockContainer .dash-item-container StButton:active,
+#dashtodockContainer .dash-item-container StButton:checked,
+#dash .dash-item-container .show-apps:active,
+#dash .dash-item-container .show-apps:checked,
+#dash .dash-item-container .show-apps-icon:active,
+#dash .dash-item-container .show-apps-icon:checked,
+#dash .dash-item-container .overview-tile:active,
+#dash .dash-item-container .overview-tile:checked,
+#dash .dash-item-container .app-well-app:active,
+#dash .dash-item-container .app-well-app:checked,
+#dash .dash-item-container StButton:active,
+#dash .dash-item-container StButton:checked,
+.gld1-dash .show-apps:active,
+.gld1-dash .show-apps:checked,
+.gld1-dash .app-well-app:active,
+.gld1-dash .app-well-app:checked,
+.gld1-dash .overview-tile:active,
+.gld1-dash .overview-tile:checked,
+.dash2dock-dash .show-apps:active,
+.dash2dock-dash .show-apps:checked,
+.dash2dock-dash .app-well-app:active,
+.dash2dock-dash .app-well-app:checked,
+.dash2dock-dash .overview-tile:active,
+.dash2dock-dash .overview-tile:checked,
+.dash-item-container .app-well-app:active,
+.dash-item-container .app-well-app:checked,
+.dash-item-container .show-apps:active,
+.dash-item-container .show-apps:checked,
+.dash-item-container .show-apps-icon:active,
+.dash-item-container .show-apps-icon:checked,
+.dash-item-container StButton:active,
+.dash-item-container StButton:checked {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Focused app styling */
+#gld1Container .dash-item-container .app-well-app.focused,
+#dashtodockContainer .dash-item-container .app-well-app.focused,
+#dash .dash-item-container .app-well-app.focused,
+.dash-item-container .app-well-app.focused {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Suppress GNOME Shell native running dot in the dock */
+#gld1Container .app-grid-running-dot,
+#dashtodockContainer .app-grid-running-dot,
+#dash .app-grid-running-dot,
+#dash .dash-item-container .app-grid-running-dot,
+.gld1-dash .app-grid-running-dot,
+.dash2dock-dash .app-grid-running-dot,
+.dash-item-container .app-grid-running-dot {
+    display: none;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    background: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Custom running indicators container */
+.gld1-running-container,
+.dash2dock-running-container {
+    spacing: 3px;
+    margin-bottom: 2px;
+    transition-duration: 200ms;
+}
+
+.gld1-dash.vertical .gld1-running-container,
+.dash2dock-dash.vertical .dash2dock-running-container {
+    spacing: 3px;
+    margin-bottom: 0;
+    margin-left: 2px;
+}
+
+/* Multi-Dots Style */
+.gld1-running-dot,
+.dash2dock-running-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 9999px;
+    background-color: #3584e4;
+    transition-duration: 200ms;
+}
+
+.gld1-running-dot.focused,
+.dash2dock-running-dot.focused {
+    background-color: #78aeed;
+    width: 12px;
+    border-radius: 3px;
+}
+
+.gld1-dash.vertical .gld1-running-dot.focused,
+.dash2dock-dash.vertical .dash2dock-running-dot.focused {
+    width: 4px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+/* Continuous Line / Pill Style */
+.gld1-running-line,
+.dash2dock-running-line {
+    width: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #3584e4;
+    transition-duration: 200ms;
+}
+
+.gld1-running-line.focused,
+.dash2dock-running-line.focused {
+    background-color: #78aeed;
+    width: 24px;
+    height: 3.5px;
+}
+
+.gld1-dash.vertical .gld1-running-line,
+.dash2dock-dash.vertical .dash2dock-running-line {
+    width: 3px;
+    height: 14px;
+}
+
+.gld1-dash.vertical .gld1-running-line.focused,
+.dash2dock-dash.vertical .dash2dock-running-line.focused {
+    width: 3.5px;
+    height: 24px;
+}
+
+/* Compact Dash Style */
+.gld1-running-dash,
+.dash2dock-running-dash {
+    width: 8px;
+    height: 3px;
+    border-radius: 1.5px;
+    background-color: #3584e4;
+    transition-duration: 200ms;
+}
+
+.gld1-running-dash.focused,
+.dash2dock-running-dash.focused {
+    background-color: #78aeed;
+    width: 16px;
+}
+
+.gld1-dash.vertical .gld1-running-dash,
+.dash2dock-dash.vertical .dash2dock-running-dash {
+    width: 3px;
+    height: 8px;
+}
+
+.gld1-dash.vertical .gld1-running-dash.focused,
+.dash2dock-dash.vertical .dash2dock-running-dash.focused {
+    width: 3px;
+    height: 16px;
+}
+
+/* Ambient Glow Style */
+.gld1-running-glow,
+.dash2dock-running-glow {
+    width: 20px;
+    height: 3px;
+    border-radius: 9999px;
+    background-color: #3584e4;
+    box-shadow: 0 0 8px rgba(53, 132, 228, 0.85);
+    transition-duration: 200ms;
+}
+
+.gld1-running-glow.focused,
+.dash2dock-running-glow.focused {
+    background-color: #78aeed;
+    width: 28px;
+    box-shadow: 0 0 12px rgba(120, 174, 237, 1.0);
+}
+
+.gld1-dash.vertical .gld1-running-glow,
+.dash2dock-dash.vertical .dash2dock-running-glow {
+    width: 3px;
+    height: 20px;
+}
+
+.gld1-dash.vertical .gld1-running-glow.focused,
+.dash2dock-dash.vertical .dash2dock-running-glow.focused {
+    width: 3px;
+    height: 28px;
+}
+
+/* Live Window Preview Menu & Cards */
+.gld1-preview-menu,
+.gld1-preview-menu.popup-menu,
+.gld1-preview-menu .popup-menu-content,
+.gld1-preview-menu .popup-menu-boxpointer,
+.gld1-preview-container-item,
+.dash2dock-preview-menu,
+.dash2dock-preview-menu.popup-menu,
+.dash2dock-preview-menu .popup-menu-content,
+.dash2dock-preview-menu .popup-menu-boxpointer,
+.dash2dock-preview-container-item {
+    background-color: transparent;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gld1-preview-cards-box,
+.dash2dock-preview-cards-box {
+    spacing: 10px;
+    padding: 8px;
+    background-color: rgba(30, 30, 30, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: none;
+}
+
+.gld1-preview-card,
+.dash2dock-preview-card {
+    border-radius: 12px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+    transition-duration: 150ms;
+}
+
+.gld1-preview-card:hover,
+.dash2dock-preview-card:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(120, 174, 237, 0.5);
+    box-shadow: none;
+}
+
+.gld1-preview-card-header,
+.dash2dock-preview-card-header {
+    spacing: 6px;
+    margin-bottom: 6px;
+}
+
+.gld1-preview-title,
+.dash2dock-preview-title {
+    font-size: 9pt;
+    font-weight: 600;
+    color: #ffffff;
+    max-width: 140px;
+}
+
+.gld1-preview-thumbnail-bin,
+.dash2dock-preview-thumbnail-bin {
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.gld1-preview-fallback,
+.dash2dock-preview-fallback {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    spacing: 6px;
+    padding: 12px;
+}
+
+.gld1-preview-fallback-label,
+.dash2dock-preview-fallback-label {
+    font-size: 8.5pt;
+    color: #deddda;
+}
+
+.gld1-preview-actions-bar,
+.dash2dock-preview-actions-bar {
+    spacing: 4px;
+}
+
+.gld1-preview-action-btn,
+.dash2dock-preview-action-btn {
+    padding: 3px 6px;
+    border-radius: 6px;
+    color: #c0bfbc;
+    transition-duration: 120ms;
+}
+
+.gld1-preview-action-btn:hover,
+.dash2dock-preview-action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+}
+
+.gld1-preview-action-btn.close:hover,
+.dash2dock-preview-action-btn.close:hover {
+    background-color: #e01b24;
+    color: #ffffff;
+}
+
+.gld1-window-item,
+.dash2dock-window-item {
+    padding: 6px 10px;
+    border-radius: 8px;
+    spacing: 8px;
+}
+
+.gld1-window-item:hover,
+.dash2dock-window-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.gld1-window-item-label,
+.dash2dock-window-item-label {
+    font-size: 10pt;
+    font-weight: 500;
+}
+
+.gld1-window-close-button,
+.dash2dock-window-close-button {
+    padding: 4px;
+    border-radius: 9999px;
+    color: #deddda;
+}
+
+.gld1-window-close-button:hover,
+.dash2dock-window-close-button:hover {
+    background-color: #e01b24;
+    color: #ffffff;
+}
+
+/* Spring-loaded Drag & Drop state */
+#gld1Container .dash-item-container .app-well-app.spring-active,
+#dashtodockContainer .dash-item-container .app-well-app.spring-active,
+#dash .dash-item-container .app-well-app.spring-active,
+.gld1-dash .app-well-app.spring-active,
+.dash2dock-dash .app-well-app.spring-active,
+.dash-item-container .app-well-app.spring-active {
+    background-color: rgba(53, 132, 228, 0.35);
+    box-shadow: inset 0 0 0 1.5px rgba(120, 174, 237, 0.8);
+    transition-duration: 200ms;
+}

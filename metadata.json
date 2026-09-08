@@ -1,0 +1,13 @@
+{
+  "name": "Gnome Lean Dock 1",
+  "description": "A streamlined dock for GNOME Shell (GLD-1). Cleaned and optimized fork.",
+  "uuid": "gld-1@bazinfla.github.com",
+  "gettext-domain": "gld-1@bazinfla.github.com",
+  "settings-schema": "org.gnome.shell.extensions.gld-1",
+  "shell-version": [
+    "49",
+    "50"
+  ],
+  "url": "https://github.com/bazinfla/gnome-lean-dock-1",
+  "version": 1
+}

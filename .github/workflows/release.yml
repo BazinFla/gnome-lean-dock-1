@@ -1,0 +1,65 @@
+name: Build & Release Extension
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gnome-shell libglib2.0-dev-bin jq python3
+
+      - name: Build extension package
+        run: |
+          chmod +x ./scripts/pack.sh
+          ./scripts/pack.sh
+          UUID=$(jq -r '.uuid' metadata.json)
+          echo "ZIP_NAME=dist/${UUID}.shell-extension.zip" >> $GITHUB_ENV
+          echo "UUID=${UUID}" >> $GITHUB_ENV
+
+      - name: Extract changelog notes
+        run: |
+          TAG_NAME="${{ github.ref_name }}"
+          VERSION="${TAG_NAME#v}"
+          python3 -c "
+          import re, sys
+          version = sys.argv[1]
+          try:
+              with open('.github/CHANGELOG.md', 'r', encoding='utf-8') as f:
+                  content = f.read()
+              pattern = rf'## \[{re.escape(version)}\][^\n]*\n(.*?)(?=\n## \[|\Z)'
+              match = re.search(pattern, content, re.DOTALL)
+              if match:
+                  notes = match.group(1).strip()
+                  notes = re.sub(r'\n*---\s*$', '', notes).strip()
+              else:
+                  notes = f'Release {version}'
+          except Exception as e:
+              notes = f'Release {version}'
+          with open('RELEASE_NOTES.md', 'w', encoding='utf-8') as out:
+              out.write(notes + '\n')
+          " "${VERSION}"
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Release ${{ github.ref_name }}"
+          body_path: RELEASE_NOTES.md
+          files: |
+            ${{ env.ZIP_NAME }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

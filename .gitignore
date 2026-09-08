@@ -1,0 +1,8 @@
+schemas/gschemas.compiled
+*.zip
+.DS_Store
+
+# local development
+dev/
+dist/
+
